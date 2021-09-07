@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+        integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+                <small id="name-msg">Name fild is requird</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                <small id="pass-msg">Password fild is requird</small>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="button" id="submit">Submit</button>
+            </div>
+
+        </form>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p id="some"></p>
+    </div>
+
+
+    <script>
+        //hide msg
+            let userMsq = document.getElementById('name-msg');
+            userMsq.style = "display:none";
+            let passMsq = document.getElementById('pass-msg');
+            passMsq.style = "display:none";
+        //user fild validation
+        let username = document.getElementById('username').addEventListener('keydown', testRequrid);
+        function testRequrid(e){
+            let val = document.getElementById('username');
+            let text = document.getElementById('some');
+            text.appendChild(document.createTextNode(val.value));
+            
+            console.log(val);
+            
+        }
+    </script>
+</body>
+
+</html>
