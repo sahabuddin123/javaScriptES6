@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let re;
+        let str;
+
+        // Character Set using brackets []
+
+       // re = /[ea]llo/; // must be one
+       // re = /[^ha]ello/; // anything expact those inside
+        //re = /^[ha]ello/; // must sart with hare any
+       // re = /[A-Z]ello/; // Must use Capital/Uppercase Character
+        //re = /[a-z]ello/; // must use small / lowercase Character
+        //re = /^[A-Z]milon/; // First Letter must upperCase
+       //re = /^[a-z]jahed/; // First letter must be lowerCase
+        //re = /^[A-Za-z]jahed/; // First letter anything
+        // re = /[0-9]tarek/; // Must use number
+        //re = /^[0-9][0-9][0-9][0-9][0-9]tarek/; // Must Start with number
+        //re = /[^0-9a-zA-Z]tarek/; // 
+
+        //Bracers {} - Quantifier
+
+        //re = /el{2}o/; 
+        //re = /el{1,4}o/; 
+        //re = /^[0-9]{5,10}/;
+
+        // Parantheses () - Grouping
+        //re = /^([0-9]{8,10})/;
+        //re = /^([0-9]x){3}/;
+
+       // re = /^01[0-9]{9}/;
+
+       re = /^\+8801[3-9]([0-9]{8})/;
+
+        str = "+8801367033550";
+
+        console.log(re.exec(str));
+         //call function
+         reTest(re,str);
+        //ganarate function
+        function reTest(re, str){
+            if(re.test(str)){
+                console.log(`${str} match ${re.source}`);
+            }else{
+                console.log(`${str} doesn't match ${re.source}`);
+            }
+        }
+        
+    </script>
+</body>
+</html>
